@@ -50,6 +50,8 @@ export default class ItemView extends View {
     const name = model.getName();
     const icon = model.getIcon();
     const clsBase = `${pfx}layer`;
+    const { icons } = em?.getConfig();
+    const { move, eye, eyeOff, chevron } = icons!;
 
     return `
       ${
@@ -80,7 +82,7 @@ export default class ItemView extends View {
   }
 
   public get ppfx(): string {
-    return this.em.getConfig().stylePrefix;
+    return this.em.getConfig().stylePrefix!;
   }
 
   public get pfx(): string {
